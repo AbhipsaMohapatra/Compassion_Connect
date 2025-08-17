@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.jsx';
 import './index.css';
 import Home from './pages/home.jsx';
+import Leaderboard from './pages/Leaderboard.jsx';
 import Contact from './pages/contact.jsx';
 import Event from './pages//event.jsx';
 import Feedback from './pages/feedback.jsx';
@@ -12,16 +13,23 @@ import SignUp from './pages/signUp.jsx';
 import Login from './pages/login.jsx';
 
 import Navbar from './pages/Navbar.jsx'; 
+
+  
+import HashRedirect from './pages/HashRedirect.jsx';     
+
 import Payment from "./pages/Payment.jsx";
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
     <Router>
       <Navbar />
+      <HashRedirect />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/event/:id" element={<Event />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/volunteer" element={<VolunteerRegistration />} />
